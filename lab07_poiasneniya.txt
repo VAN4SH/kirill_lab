@@ -1,0 +1,25 @@
+Poyasneniya k lab07.cpp
+
+1-4: kommentarij — rabota 7, variant 25; figura (a) iz tablicy 7.1. V metodichke variant 25 sootvetstvuet bukve (a) — pervomu risunku. Zdes' vzja ta zhe model', chto i v primere (poluokruzhnost' radiusa 100 v kvadrate so storonoj 200).
+
+6-9: cmath — M_PI, fabs; cstdlib — rand; ctime; iostream.
+
+13-16: funkcija vnutri_figury — tochka (x,y) vnutri zashtrihovannoj oblasti, esli y>=0 i x^2+y^2<=R^2 (verhnjaja polovina kruga).
+
+18: main.
+
+19: zernistoe dlja rand.
+
+21-27: vvod N — chislo sluchajnyh tochek; proverka.
+
+29-32: R=100, ploschad' opisannogo kvadrata S_kv = 40000, tochnaja ploschad' polukruga S_tochno = pi*R^2/2.
+
+34-41: cikl: kajdaja iteracija generiruet x i y ravnomerno v [-R;R]; esli tochka popala v figurу, uvelichivaem schetchik n.
+
+43: po formule metodichki S_fig = S_kv * n / N.
+
+44: otnositel'naja pogreshnost' v procentah.
+
+46-48: vyvod rezul'tatov.
+
+Zamechanie: esli risunok (a) v vashej tablitse drugoj, nuzhno pomenjat' uslovie v vnutri_figury i S_tochno.

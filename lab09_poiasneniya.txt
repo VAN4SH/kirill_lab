@@ -1,0 +1,27 @@
+Poyasneniya k lab09.cpp
+
+1-5: kommentarij — rabota 9, variant 25. Po tablite 9.4: uslovie — «Summa naibol'shego i naimen'shego elementov»; metod — sortirovka vstavkoj. Neparnyj variant — obrabotka po strokam (dlja chetnyh — po stolbtcam).
+
+7-10: biblioteki: sluchajnye chisla, vremja, vyvod, format.
+
+14-24: funkcija sort_vstavka — klassicheskaja sortirovka vstavkoj: berem element key, sdvigaem bol'shie vpravo, vstavljaem key na mesto.
+
+26: main.
+
+27: zernistoe rand.
+
+29-36: vvod razmerov matritsy; sozdanie dinamicheskoj matritsy veschhestvennyh chisel (v zadanii prosto «matritsa A» — mozhno int, zdes' double dlja srednego).
+
+38-44: vyvod A.
+
+46-54: dlja kazhdoj stroki i nahodim minimum i maksimum, v massiv B zapisivaem ih summu — eto i est' «summa naibol'shego i naimen'shego» v stroke.
+
+56-60: pechat' B do sortirovki.
+
+62: vizov sortirovki.
+
+64-66: pechat' B posle.
+
+68-71: ochistka pamjati.
+
+Zamechanie: esli v zadanii pod «summoj» imeetsja v vidu drugaja kombinacija (naprimer tol'ko po vsej matritse odno chislo), utochnite u prepodavatеlja; zdes' realizovan standartnyj razbor «po strokam» dlja matrichnyh laboratornyh.

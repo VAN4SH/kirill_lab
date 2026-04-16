@@ -1,0 +1,31 @@
+Poyasneniya k lab05.cpp
+
+1-5: kommentarij — rabota 5, variant 25; tri podzadanija iz tablicy 5.1 (poryadok bukv b,v,a v tablice sootvetstvuet zadanijam v kolonke 3 dlja gruppy variantov 23-30).
+
+7-9: cstdlib — rand; ctime — vremja dlja zernistosti; cmath ne objazatel'no, no llabs iz stdlib.h / cstdlib.
+
+13: tochka vhoda.
+
+14: srand(time) — chtoby pri kazhdom zapuske sluchajnye chisla byli raznymi.
+
+16-21: zapros razmera n i proverka, chto massiv ne pustoj.
+
+23: vydelit' massiv v kuche cherez new int[n].
+
+24-25: zapolnit' ot -50 do 70: rand() % 121 daet 0..120, minus 50 daet -50..70.
+
+27-30: vyvod massiva na ekran.
+
+32-35: zadanije a) — summirovat' tol'ko otritsatel'nye.
+
+37-40: zadanije b) — indeks i kraten 3: v C++ indeksy s nulja, berem i % 3 == 0.
+
+42-46: najti minimum i maksimum po vsemu massivu.
+
+47: proizvedenie modulej: |min|*|max| cherez llabs (dlja bol'shih znachenij — long long).
+
+49-51: vyvod treh rezul'tatov.
+
+53: osvobodit' pamjat' delete[].
+
+54: return 0.

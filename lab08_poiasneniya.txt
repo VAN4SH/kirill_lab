@@ -1,0 +1,15 @@
+Poyasneniya k lab08.cpp
+
+1-3: kommentarij — v metodichke laboratornaja 8 trebuet Windows Forms: tri vkladki, menju, Chart. Jetot fajl — prostaja chast': tabulirovanie toj zhe funkcii, chtoby bylo chto pokazyvat' v tablitse i na grafike.
+
+5-7: cmath, iostream, iomanip.
+
+11-22: tri funkcii iz tablicy 8.1 dlja varianta 25; f3 voz'ma kak v sosednih variantah tablicy (mnogochlen 2x^2+x^4+1), esli v vashej pechati tablicy est' drugaja tret'ja formula — podstav'te ee.
+
+24-29: kusochek: x<=0 — f1; 0<x<=a — f2; inache f3. Parametr a = 7 (iz tablicy dlja varianta 25).
+
+31-42: otrezok i shag vziaty iz tablicy 8.1 (blizkij variant s temi zhe f1, f2 v tablice 3 — [-3,7; 8,5], shag 0,11); pri nuzhde zamenite na svoi chisla iz vashej tablicy.
+
+34-41: cikl for, vyvod tochek, poisk minimuma i maksimuma na setke.
+
+Zamechanie: polnaja laba 8 — jeto eshho MenuStrip, ColorDialog, sohranenie v fajl; jeto delaetsja v srede Visual Studio po metodichke, a ne v odnom konsol'nom fajle.
