@@ -1,15 +1,26 @@
-Poyasneniya k lab08.cpp
+ЛАБОРАТОРНАЯ РАБОТА 8 (вариант 25, табл. 8.1). Пояснение к программе lab08.cpp
+====================================================================
 
-1-3: kommentarij — v metodichke laboratornaja 8 trebuet Windows Forms: tri vkladki, menju, Chart. Jetot fajl — prostaja chast': tabulirovanie toj zhe funkcii, chtoby bylo chto pokazyvat' v tablitse i na grafike.
+НАЗНАЧЕНИЕ
+  Математическая часть лабораторной, где в WinForms к таблицы и графикам: здесь
+  только табулирование кусочной функции с a = 7, те же ветвления, что в работе 3/8
+  в методичке: f1 на x ≤ 0, f2 на (0, a], f3 при x > a; но формулы из табл. 8.1
+  (не те же, что в лаб. 3).
 
-5-7: cmath, iostream, iomanip.
+ФОРМУЛЫ
+  f1(x) = x² + sin(7x) - 1;
+  f2(x) = x³ + 10x;
+  f3(x) = 2x² + x⁴ + 1
+  (через y_fun(x, a) выбирается ветвь).
 
-11-22: tri funkcii iz tablicy 8.1 dlja varianta 25; f3 voz'ma kak v sosednih variantah tablicy (mnogochlen 2x^2+x^4+1), esli v vashej pechati tablicy est' drugaja tret'ja formula — podstav'te ee.
+ЧТО ДЕЛАЕТ main
+  Задан отрезок: xn = -7.4, xk = 8.5, шаг xh = 0,11. Цикл for по x, вывод x и y
+  в табличном виде, параллельно снова ищутся ymin, ymax. В выводе подсказка, что
+  данные можно вставлять в вкладки/график в C++/WinForms. Учёт 1e-9 у правой
+  границы — как в других лабораторных с вещественной сеткой.
 
-24-29: kusochek: x<=0 — f1; 0<x<=a — f2; inache f3. Parametr a = 7 (iz tablicy dlja varianta 25).
+СВЯЗЬ С WinForms
+  Сама консоль ничего «не рисует»; папка winforms_cppcli/ содержит проекты
+  (TabControl, Chart) — смысл: этот .cpp — проверка формул и сетка точек.
 
-31-42: otrezok i shag vziaty iz tablicy 8.1 (blizkij variant s temi zhe f1, f2 v tablice 3 — [-3,7; 8,5], shag 0,11); pri nuzhde zamenite na svoi chisla iz vashej tablicy.
-
-34-41: cikl for, vyvod tochek, poisk minimuma i maksimuma na setke.
-
-Zamechanie: polnaja laba 8 — jeto eshho MenuStrip, ColorDialog, sohranenie v fajl; jeto delaetsja v srede Visual Studio po metodichke, a ne v odnom konsol'nom fajle.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

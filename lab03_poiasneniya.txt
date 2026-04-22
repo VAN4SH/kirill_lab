@@ -1,37 +1,30 @@
-Poyasneniya k lab03.cpp
+ЛАБОРАТОРНАЯ РАБОТА 3 (вариант 25). Пояснение к программе lab03.cpp
+====================================================================
 
-Stroki 1-2: zagolovok — rabota 3, variant 25; tabulirovanie i poisk minimuma/maksimuma na otrezke.
+НАЗНАЧЕНИЕ
+  На отрезке [xn; xk] с шагом xh строится таблица значений y(x) кусочной
+  функции. Используется цикл while. Параллельно ищутся минимальное и максимальное
+  значения y на этом отрезке.
 
-Stroka 4: #include <cmath> — matematika (sin, log, tan).
+КАК УСТРОЕНА ФУНКЦИЯ y (функция y_fun)
+  Порог a задан в main как константа (7.0). Для точки x:
+  - при x ≤ 0: f1(x) = ctg(x³) + 1, в коде: 1/tan(x³) + 1;
+  - при 0 < x ≤ a: f2(x) = (ln(sin x + 1))² — внутри проверяется, что
+    sin x + 1 > 0; если слишком близко к нулю, берётся 0, чтобы не «ломать» логарифм;
+  - при x > a: f2 заменяется на f3(x) = 2x² + x⁴ + 1.
 
-Stroka 5: #include <iostream> — vyvod v konsol'.
+ТАБУЛИРОВАНИЕ
+  x начинается с xn = -7.4, шаг xh = 0.16, цикл while продолжается, пока
+  x ≤ xk (к концу отрезка прибавляется маленькое число 1e-9, чтобы не потерять
+  последнюю точку из-за погрешностей вещественной арифметики).
 
-Stroka 6: #include <iomanip> — nastrojka tochnosti vyvoda (setprecision).
+ПОИСК ЭКСТРЕМУМОВ
+  Первой точке сопоставляются начальные ymin и ymax. Каждое новое y сравнивается
+  с ними: если y меньше текущего минимума — обновляем ymin, если больше
+  максимума — ymax. В конце выводятся min y и max y на отрезке (это и есть
+  «экстремумы в смысле максимума/минимума по сетке», не дифференцирование).
 
-Stroka 8: using namespace std;
+ВЫВОД
+  setfixed и setprecision(5) задают вид чисел в консоли (5 знаков после запятой).
 
-Stroki 11-14: funkcija f1 — ctg(x^3)+1. ctg zapisano kak 1/tan, tak kak v C++ net ctg.
-
-Stroki 16-23: funkcija f2 — kvadrat natural'nogo logarifma (sin(x)+1). Esli sin(x)+1 ochen' mal (blizko k nulju), chtoby ne bylo -infinity, vozvrashhaem 0 — uproshhenie dlja uchebnoj programmy.
-
-Stroki 25-28: funkcija f3 — 2*x^2 + x^4 + 1 cherez umnozhenija.
-
-Stroki 30-36: y_fun — sobrat' kusochek po usloviju: x<=0 -> f1; 0<x<=a -> f2; inache f3. Parametr a iz tablicy 3.1 dlja varianta 25 berem 7 (kak v tablice dlja jetoj stroki funkcij).
-
-Stroki 38-40: tochki otrezka i shag iz tablicy 3.1: [-7,4; 0,6], shag 0,16.
-
-Stroki 42-44: nachal'noe x ravno xn; ymin i ymax inicializiruem znacheniem v pervoj tochke.
-
-Stroka 46: fixed << setprecision(5) — pokazyvat' 5 znakov posle zapatoj.
-
-Stroka 47: zagolovok tablicy.
-
-Stroka 49: cikl while — poka x ne proshel konec otrezka (dobavlen malen'kij zapas 1e-9 iz-za oshibok veschhestvennoj arifmetiki).
-
-Stroki 50-54: schitat' y, vyvesti stroku tablicy, obnovit' minimum i maksimum, uvelichit' x na shag xh.
-
-Stroki 56-58: vyvesti najdennye jekstremumy (prostejshij poisk po tabulirovannym tochkam).
-
-Stroka 59: return 0.
-
-Zamechanie: pri x, gde tan(x^3) blizok k nulju, f1 neopredelena — v real'noj rabote stavyat proverki; zdes' uproshhennyj studentecheskij variant.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

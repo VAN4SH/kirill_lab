@@ -1,25 +1,26 @@
-Poyasneniya k lab07.cpp
+ЛАБОРАТОРНАЯ РАБОТА 7 (вариант 25, фиг. (a) в табл. 7.1). Пояснение к lab07.cpp
+====================================================================
 
-1-4: kommentarij — rabota 7, variant 25; figura (a) iz tablicy 7.1. V metodichke variant 25 sootvetstvuet bukve (a) — pervomu risunku. Zdes' vzja ta zhe model', chto i v primere (poluokruzhnost' radiusa 100 v kvadrate so storonoj 200).
+НАЗНАЧЕНИЕ
+  Метод Монте-Карло: оценка площади фигуры, если точно посчитать трудно или
+  нужна численная «эмуляция». Фигура — верхняя полуокружность радиуса R = 100
+  (y ≥ 0 и x² + y² ≤ R²) в квадрате, куда «бросаем» точки. Площадь круга/полукруга
+  известна аналитически, чтобы сравнить погрешность (PI*R²/2).
 
-6-9: cmath — M_PI, fabs; cstdlib — rand; ctime; iostream.
+ИДЕЯ
+1) Квадрат, в котором крутят случайные (x, y), имеет сторону 2R, центр (0,0)
+   примерно: x от -R до R, y от -R до R. Площадь квадрата S_кв = (2R)².
+2) N раз генерируются случайные (x, y) равномерно в этом квадрате
+   (формула: -R + 2R * rand()/(1+RAND_MAX) и аналогично для y).
+3) n — число точек, попавших в фигуру: функция vnutri_figury (y ≥ 0 и
+   x² + y² ≤ R², то есть верхняя половина круга).
+4) Оценка площади фигуры: S_ф ≈ S_кв * (n / N) — «доля попаданий» умножаем на
+   площадь квадрата (отношение площадей равно отношению «удачных» к «всем
+   попыткам», если N велико).
+5) S_tochno = πR²/2, π берётся как acos(-1) для double.
+6) Печать оценки, аналитики и относительной погрешности в процентах.
 
-13-16: funkcija vnutri_figury — tochka (x,y) vnutri zashtrihovannoj oblasti, esli y>=0 i x^2+y^2<=R^2 (verhnjaja polovina kruga).
+  Больше N — обычно меньше случайный разброс, но дольше считает. «Псевдослучай»
+  зависит от time — это нормально для учебной работы.
 
-18: main.
-
-19: zernistoe dlja rand.
-
-21-27: vvod N — chislo sluchajnyh tochek; proverka.
-
-29-32: R=100, ploschad' opisannogo kvadrata S_kv = 40000, tochnaja ploschad' polukruga S_tochno = pi*R^2/2.
-
-34-41: cikl: kajdaja iteracija generiruet x i y ravnomerno v [-R;R]; esli tochka popala v figurу, uvelichivaem schetchik n.
-
-43: po formule metodichki S_fig = S_kv * n / N.
-
-44: otnositel'naja pogreshnost' v procentah.
-
-46-48: vyvod rezul'tatov.
-
-Zamechanie: esli risunok (a) v vashej tablitse drugoj, nuzhno pomenjat' uslovie v vnutri_figury i S_tochno.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -1,27 +1,35 @@
-Poyasneniya k lab06.cpp
+ЛАБОРАТОРНАЯ РАБОТА 6 (вариант 25, табл. 6.5). Пояснение к lab06.cpp
+====================================================================
 
-Stroki 1-5: zagolovok — laboratornaja 6, variant 25; tri podzadanija iz tablicy 6.5 (dlja varianta 25 bukvy b, v, a sootvetstvujut punktam v tablice prodolzhenija).
+НАЗНАЧЕНИЕ
+  Матрица (двумерный динамический массив) целых чисел случайна в диапазоне
+  от -20 до 20, затем решаются три отдельные подзадачи: по модулю, по главной
+  диagonали и «фрагмент 6×6» для сравнения счётчиков.
 
-7-11: #include — cmath dlja abs; cstdlib — rand; ctime — time; iomanip — setw; iostream — cin, cout.
+СТРУКТУРА ДАННЫХ
+  int** a: r строк, в каждой c столбцов, заполняется циклом в цикле.
 
-13: using namespace std.
+ПУНКТ a) Максимум по модулю
+  Ищем элемент, у которого |a[i][j]| больше всех остальных. Храним индексы bi, bj
+  «лучшей» клетки; при сравнении сравниваем abs(…). В ответе — значение, номер
+  строки и столбца (0-based, как в коде).
 
-15: int main().
+ПУНКТ b) Разность max и min на главной диагонали
+  Главная диагональ — a[i][i] при i = 0..r-1, но только у квадратной матрицы
+  r == c. Если квадрат: один проход по i, dmin / dmax — min/max по диагонали,
+  печать dmax - dmin. Если не квадрат — печатается, что нельзя (нет диагонали
+  в требуемом смысле для кода).
 
-16: srand — nachal'noe zernistoe dlja rand.
+ПУНКТ в) Условия на фрагмент 6×6
+  Считается только если r ≥ 6 и c ≥ 6. Берутся:
+  - столбец с индексом 1 (это «второй» столбец, если говорить «нумеруем с 1»):
+    среди a[0][1]..a[5][1] — сколько нечётных (через abs(...) % 2);
+  - строка с индексом 2 (третья строка): среди a[2][0]..a[2][5] — сколько
+    строго положительных.
+  Ответ: произведение двух счётчиков.
+  Иначе сообщение, что нужен размер не меньше 6×6.
 
-18-27: vvod chisla strok i stolbtsov; esli menshe 1 — oshibka.
+ПАМЯТЬ
+  delete[] на каждую строку, затем delete[] на a.
 
-29-35: vydelenie pamjati dlja dvumernogo massiva: massiv ukazatelej, potom stroki; zapolnenie sluchajnymi chislami ot -20 do 20.
-
-37-43: vyvod matritsy v vide tablicy (setw(4) vyravnivaet kolonki).
-
-45-52: zadanije a) — ischem jachejku s maksimal'nym znacheniem modulja; indeksy v C++ nachinajutsja s nulja.
-
-54-61: zadanije b) — na glavnoj diagonali (elementy a[i][i]) nahodim minimum i maksimum, ih raznost'. Esli matritsa ne kvadratnaja, glavnuju diagonal' v takom vide ne opredeljajut.
-
-63-75: zadanije v) — po usloviju matritsa 6 na 6; v kode "2-j stolbec" = indeks 1, "3-ja stroka" = indeks 2. Schitaem nechetnye chisla v stolbce 1 (po vsem 6 strokam) i polozhitel'nye v stroke s indeksom 2. Proizvedenie kolichestv — otvet.
-
-77-80: osvobozhdenie pamjati: snachala kazhdaja stroka, potom massiv ukazatelej.
-
-81: return 0.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

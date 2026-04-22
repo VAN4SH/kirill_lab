@@ -1,33 +1,29 @@
-Poyasneniya k lab04.cpp
+ЛАБОРАТОРНАЯ РАБОТА 4 (вариант 25). Пояснение к программе lab04.cpp
+====================================================================
 
-1-3: opisanie raboty. V metodichke grafiki strojatsja v komponente Chart (tri serii raznogo cveta). Konsol'naja programma vychisljaet tochki; v otchete mozhno vstavljat' tablicu ili zagruzhat' fajl v Excel/Gnuplot.
+НАЗНАЧЕНИЕ
+  Задана кусочная функция из трёх ветвей (по варианту, границы: x ≤ 0; 0 < x ≤ 5;
+  x > 5). Программа считает y на отрезке [xn; xk] с шагом xh, печатает таблицу
+  (для ориентира: три «куска» в WinForms рисуют тремя цветами / тремя сериями).
+  Копия данных пишется в текстовый файл lab04_graph.txt — по парам x y, чтобы
+  можно было импортировать в Chart или в другой инструмент.
 
-5: cmath — tan, log, exp.
+ФОРМУЛЫ
+  f1(x) = x / tg x;
+  f2(x) = ln(x² + 1);
+  f3(x) = e^(-2x) - 3x + 1.
 
-6: fstream — zapis' fajla s tochkami.
+  Функция y_piece(x) возвращает нужное значение: сначала сравнение с 0, потом
+  с 5, иначе третья ветвь.
 
-7-8: iostream, iomanip — vyvod.
+ЦИКЛ
+  Используется for по x от xn до xk; к xk снова добавляется 1e-9 из-за
+  погрешностей double.
 
-12: f1 = x * ctg(x) = x/tan(x) — variant 25, tablitsa 4.1.
+СТРОКА ВЫВОДА
+  ofstream out("lab04_graph.txt") — запись; после цикла файл закрывается.
 
-14-16: f2 = ln(x^2+1).
+  «Три графика на одном» означает одна ось, три разных формулы на трёх
+  отрезках: программа готовит точки, а визуализация в методичке — в WinForms.
 
-18-20: f3 = e^(-2x) - 3x + 1.
-
-22-28: kusochek kak v punkte 4.3 metodichki: x<=0; 0<x<=5; x>5 (chislo 5 fiksirovano v zadanii, ne parametр a).
-
-30-40: granitsy i shag iz tablicy 4.1 dlja varianta 25: xn=-3,8; xk=17,1; xh=0,65.
-
-32: ofstream — sozdat' fajl lab04_graph.txt s kolonkami x i y.
-
-34-35: zagolovok.
-
-37: cikl for po x s shagom xh (studentechski prosche, chem while).
-
-38-41: schitat' y, pechatat', dopisat' v fajl.
-
-42: zakryt' fajl.
-
-43-44: soobshhenie i return.
-
-Zamechanie: gde tan(x)==0, f1 neopredelena — uchebnaja programma jeto ne fil'truet.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

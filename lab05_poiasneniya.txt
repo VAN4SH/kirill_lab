@@ -1,31 +1,30 @@
-Poyasneniya k lab05.cpp
+ЛАБОРАТОРНАЯ РАБОТА 5 (вариант 25). Пояснение к программе lab05.cpp
+====================================================================
 
-1-5: kommentarij — rabota 5, variant 25; tri podzadanija iz tablicy 5.1 (poryadok bukv b,v,a v tablice sootvetstvuet zadanijam v kolonke 3 dlja gruppy variantov 23-30).
+НАЗНАЧЕНИЕ
+  Работа с одномерным динамическим массивом целых чисел, заполненным
+  «случайно», и три типовых задания из таблицы: суммы и произведение.
 
-7-9: cstdlib — rand; ctime — vremja dlja zernistosti; cmath ne objazatel'no, no llabs iz stdlib.h / cstdlib.
+ЧТО ДЕЛАЕТ ПРОГРАММА
+1) srand + time — старт генератора псевдослучайных чисел (чтобы при каждом
+   запуске были разные данные, если time меняется).
+2) Вводится размер n, создаётся int* a = new int[n].
+3) Элементы от -50 до 70: формула -50 + rand() % 121 даёт 121 вариант значения.
+4) Массив печатается (это и есть «сгенерировали — показали»).
 
-13: tochka vhoda.
+ПУНКТ a)
+  Сумма всех отрицательных элементов: обход, если a[i] < 0 — добавляем к sum_neg
+  (тип long long, чтобы не переполнить сумму на большом n).
 
-14: srand(time) — chtoby pri kazhdom zapuske sluchajnye chisla byli raznymi.
+ПУНКТ b)
+  Сумма элементов, чей индекс кратен 3: i % 3 == 0 означает индексы 0, 3, 6, …
+  (в C++ нумерация с нуля, как в задании).
 
-16-21: zapros razmera n i proverka, chto massiv ne pustoj.
+ПУНКТ в)
+  Находим минимум mn и максимум mx по всему массиву. Ответ: |mn| * |mx|
+  (llabs — модуль для long long).
 
-23: vydelit' massiv v kuche cherez new int[n].
+ПАМЯТЬ
+  В конце delete[] a — динамический массив обязан быть освобождён.
 
-24-25: zapolnit' ot -50 do 70: rand() % 121 daet 0..120, minus 50 daet -50..70.
-
-27-30: vyvod massiva na ekran.
-
-32-35: zadanije a) — summirovat' tol'ko otritsatel'nye.
-
-37-40: zadanije b) — indeks i kraten 3: v C++ indeksy s nulja, berem i % 3 == 0.
-
-42-46: najti minimum i maksimum po vsemu massivu.
-
-47: proizvedenie modulej: |min|*|max| cherez llabs (dlja bol'shih znachenij — long long).
-
-49-51: vyvod treh rezul'tatov.
-
-53: osvobodit' pamjat' delete[].
-
-54: return 0.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
