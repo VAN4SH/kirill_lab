@@ -30,7 +30,7 @@ void Lab09Win::Form1::refreshBlist(bool sorted) {
 }
 
 void Lab09Win::Form1::InitializeComponent(void) {
-    components = gcnew Container();
+    components = gcnew System::ComponentModel::Container();
     Text = L"LR9 v25 — matritsa, B po strokam, sortirovka vstavkoj";
     ClientSize = Drawing::Size(720, 480);
     StartPosition = FormStartPosition::CenterScreen;

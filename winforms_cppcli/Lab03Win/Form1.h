@@ -18,7 +18,7 @@ namespace Lab03Win {
         }
 
     private:
-        Container^ components;
+        System::ComponentModel::Container^ components;
 
         Label^ lblXn;
         Label^ lblXk;

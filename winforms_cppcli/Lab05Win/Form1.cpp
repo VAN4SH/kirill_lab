@@ -6,7 +6,7 @@ using namespace System::Windows::Forms;
 using namespace System::Drawing;
 
 void Lab05Win::Form1::InitializeComponent(void) {
-    components = gcnew Container();
+    components = gcnew System::ComponentModel::Container();
     Text = L"LR5 v25 — massiv, sluchajnye -50..70";
     ClientSize = Drawing::Size(520, 420);
     StartPosition = FormStartPosition::CenterScreen;

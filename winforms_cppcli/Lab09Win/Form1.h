@@ -18,7 +18,7 @@ namespace Lab09Win {
         }
 
     private:
-        Container^ components;
+        System::ComponentModel::Container^ components;
 
         Label^ lblR;
         Label^ lblC;

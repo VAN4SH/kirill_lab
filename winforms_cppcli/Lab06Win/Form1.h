@@ -18,7 +18,7 @@ namespace Lab06Win {
         }
 
     private:
-        Container^ components;
+        System::ComponentModel::Container^ components;
 
         Label^ lblR;
         Label^ lblC;

@@ -6,7 +6,7 @@ using namespace System::Windows::Forms;
 using namespace System::Drawing;
 
 void Lab06Win::Form1::InitializeComponent(void) {
-    components = gcnew Container();
+    components = gcnew System::ComponentModel::Container();
     Text = L"LR6 v25 — matritsa, DataGridView";
     ClientSize = Drawing::Size(640, 480);
     StartPosition = FormStartPosition::CenterScreen;

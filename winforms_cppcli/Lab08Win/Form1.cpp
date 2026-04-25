@@ -16,7 +16,7 @@ static double ParseDouble(TextBox^ tb) {
 }
 
 void Lab08Win::Form1::InitializeComponent(void) {
-    components = gcnew Container();
+    components = gcnew System::ComponentModel::Container();
     Text = L"LR8 v25 — vkladki (tablitsa + grafik), menju";
     ClientSize = Drawing::Size(720, 520);
     StartPosition = FormStartPosition::CenterScreen;

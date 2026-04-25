@@ -18,7 +18,7 @@ namespace Lab08Win {
         }
 
     private:
-        Container^ components;
+        System::ComponentModel::Container^ components;
 
         MenuStrip^ menu;
         ToolStripMenuItem^ mFile;

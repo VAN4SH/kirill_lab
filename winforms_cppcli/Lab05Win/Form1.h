@@ -18,7 +18,7 @@ namespace Lab05Win {
         }
 
     private:
-        Container^ components;
+        System::ComponentModel::Container^ components;
 
         Label^ lblN;
         TextBox^ tbN;

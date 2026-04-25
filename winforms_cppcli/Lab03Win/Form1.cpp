@@ -14,7 +14,7 @@ static double ParseDouble(TextBox^ tb) {
 }
 
 void Lab03Win::Form1::InitializeComponent(void) {
-    components = gcnew Container();
+    components = gcnew System::ComponentModel::Container();
     Text = L"LR3 v25 — tabuljacija (while), DataGridView";
     ClientSize = Drawing::Size(560, 460);
     StartPosition = FormStartPosition::CenterScreen;
